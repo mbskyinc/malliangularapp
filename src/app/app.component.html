@@ -1,0 +1,45 @@
+<div> 
+<mat-toolbar color = "primary">
+  <mat-toolbar-row> 
+      <button mat-icon-button>
+          <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <span> {{title}} </span> 
+    <div>
+      <a href="#" class="navbar-item" routerLink="counting" mat-button>Counting</a>
+      <a href="#" class="navbar-item" routerLink="addition"  mat-button>Additon</a>
+      <a href="#" class="navbar-item" routerLink="subtraction" mat-button>Subtraction</a> 
+      <a href="#" class="navbar-item" routerLink="multiplication" mat-button>Multiplication</a>
+    </div>
+    <span class="toolbar-spacer"></span>
+    <div *ngIf="loggedInUser != null"> 
+      <a mat-button (click)="logout()" routerLink="/login">Logout</a>
+     </div>    
+    <span>{{loggedInUser}}</span> 
+    <div *ngIf="loggedInUser == null else false"> 
+      <a mat-button routerLink="/register">Register</a>
+      <a mat-button routerLink="/login">Login</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar> 
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+          <a mat-list-item (click)="sidenav.close()" routerLink="counting" >Counting</a>
+          <a mat-list-item (click)="sidenav.close()" routerLink="addition" >Additon</a>
+          <a mat-list-item (click)="sidenav.close()" routerLink="subtraction" >Subtraction</a>
+          <a mat-list-item (click)="sidenav.close()" routerLink="multiplication" >Multiplication</a>
+          <a mat-list-item (click)="sidenav.toggle()" href="#">Close</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>   
+
+

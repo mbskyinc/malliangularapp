@@ -1,0 +1,33 @@
+<!--<html>
+    <head>-->
+        <div>
+        <h1>Multiplication Page {{question}}</h1>
+        <div>{{title}}</div>
+    <mat-toolbar>
+        <span>Multiplication</span>
+        <div>{{question}}</div>
+    </mat-toolbar>
+    <mat-card class="my-card">
+        <mat-card-content>
+          <form class="my-form">
+                <mat-form-field class="full-width">
+                        <mat-label>{{question}}</mat-label>
+                        <input  matOutput  placeholder={{question}} name="fExpression"  required>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                   <mat-label>Answer</mat-label>
+                   <input  matInput  placeholder= "enteredAnswer"  name="fAnswer"  required>
+                </mat-form-field>
+                <mat-divider></mat-divider>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="submit()" color="primary">SUBMIT</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+ <!--   </head>
+    <body>
+        <my-app> </my-app>        
+    </body>
+</html>    -->
