@@ -17,6 +17,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MyMaterialModule } from  './material.module';
 import {FormsModule} from '@angular/forms';
 import {DataService} from './data.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {DataService} from './data.service';
     MatSidenavModule, 
     MatListModule,
     MyMaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
