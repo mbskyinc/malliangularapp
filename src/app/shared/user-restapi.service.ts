@@ -46,10 +46,12 @@ export class UserRestApiService {
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = error.error.message;
+     // errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    alert(errorMessage);
     return throwError(errorMessage);
- }
+    //return alert(error.message);
+  }
 
 }

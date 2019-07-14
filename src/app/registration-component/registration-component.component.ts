@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { UserRestApiService } from "../shared/user-restapi.service";
 import {Router} from '@angular/router';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-registration-component',
@@ -13,14 +14,16 @@ export class RegistrationComponentComponent implements OnInit {
 
   constructor(
     private router: Router,
+    public dataService: DataService,
     public restApi: UserRestApiService
   ) { }
 
   ngOnInit() {
   }
 
-  addUser(dataUser) {
+  addUser() {
     this.restApi.createUser(this.userDetails).subscribe((data: {}) => {
+      this.dataService.loggedInUser = this.userDetails.username;
       this.router.navigate(["counting"]);
     })
   }

@@ -29,18 +29,7 @@ export class LoginComponentComponent implements OnInit {
         this.dataService.loggedInUser = null;
         alert("Invalid username/password for the given username: " + this.userDetails.username);
       }
-      //this.router.navigate(["counting"]);
     })
-    
-    //if(this.username == 'admin' && this.password == 'admin'){
-      /*
-    if(this.username == this.password){
-          this.router.navigate(["counting"]);
-      this.dataService.loggedInUser = this.username;
-    }else {
-      alert("Invalid username/password for the given username: " + this.username);
-    }
-    */
   }
 
   logout() : void {
