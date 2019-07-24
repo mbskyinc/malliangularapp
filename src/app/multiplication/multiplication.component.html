@@ -5,25 +5,29 @@
         <div>{{title}}</div>
     <mat-toolbar>
         <span>Multiplication</span>
-        <div>{{question}}</div>
+        <div></div>
+        <!--QuestionBankService.questionSet.setname-->
+      <!--  <input  matInput [readonly]  [(ngModel)]="this.questionSet.setname"  name="operation"  required>-->
+ 
     </mat-toolbar>
-    <mat-card class="my-card">
+  <mat-card class="my-card">
         <mat-card-content>
-          <form class="my-form">
+            <form class="my-form">
                 <mat-form-field class="full-width">
-                        <mat-label>{{question}}</mat-label>
-                        <input  matOutput  placeholder={{question}} name="fExpression"  required>
+                        <input  matInput [readonly]  placeholder="Times " [(ngModel)]="currentQuestion.question"  name="operation"  required>
                 </mat-form-field>
                 <mat-form-field class="full-width">
                    <mat-label>Answer</mat-label>
-                   <input  matInput  placeholder= "enteredAnswer"  name="fAnswer"  required>
+                   <form (keydown)="keyDownFunction($event)"> 
+                   <input  matInput placeholder= "Answer" [(ngModel)]="enteredAnswer" name="fAnswer" autocomplete="off"  required>
+                   </form>    
                 </mat-form-field>
                 <mat-divider></mat-divider>
-            </form>
+            </form>   
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button (click)="submit()" color="primary">SUBMIT</button>
-        </mat-card-actions>
+            <button mat-raised-button type="submit" (click)="checkAnswer()" color="primary">SUBMIT</button>
+          </mat-card-actions>
     </mat-card>
 </div>
  <!--   </head>

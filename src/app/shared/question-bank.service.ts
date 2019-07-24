@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../shared/user';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Section } from '../shared/section';
+import { Question } from '../shared/question';
+import { QuestionSet} from '../shared/questionSet';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserRestApiService {
- // Define API
+export class QuestionBankService {
+  // Define API
  apiURL = 'http://localhost:3001';
+ sectionId ='5d318853f983bb6521372bb0';
+ questionSetId= '5d3411ce5b8cb3232bc0715d';
 
   constructor(private http: HttpClient) { }
 
@@ -20,18 +24,19 @@ export class UserRestApiService {
     })
   }  
 
-    // HttpClient API post() method => Create user
-    createUser(user): Observable<User> {
-      return this.http.post<User>(this.apiURL + '/users', JSON.stringify(user), this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
-    }
-
-    // HttpClient API post() method => Create user
-    authenticateUser(user): Observable<User> {
-      return this.http.post<User>(this.apiURL + '/users/authenticate', JSON.stringify(user), this.httpOptions)
+  /*
+      // HttpClient API post() method => Get question
+ async     getquestionSet() {
+     await   this.http.get(this.apiURL + '/sections/'+this.sectionId+'/questionSets/'+this.questionSetId).subscribe((res)=>{
+          console.log(res);
+          this.questionSet=res;
+          return this.questionSet;
+        })
+      }
+*/
+      // HttpClient API post() method => Create user
+      getquestionSet(): Observable<QuestionSet> {
+      return this.http.get<QuestionSet>(this.apiURL + '/sections/'+this.sectionId+'/questionSets/'+this.questionSetId)
       .pipe(
         retry(1),
         
