@@ -22,11 +22,19 @@
                    <input  matInput placeholder= "Answer" [(ngModel)]="enteredAnswer" name="fAnswer" autocomplete="off"  required>
                    </form>    
                 </mat-form-field>
+                <mat-icon *ngIf="answerFlag == true">check_circle</mat-icon>
+                <mat-icon *ngIf="answerFlag == false">highlight_off</mat-icon>
+              <!--  <div *ngIf="answerFlag == true"> 
+                        <mat-icon *ngIf="answerFlag == true">check_circle</mat-icon>
+                </div>
+                <div *ngIf="answerFlag == false"> 
+                        <mat-icon *ngIf="answerFlag == false">highlight_off</mat-icon>
+                </div> -->          
                 <mat-divider></mat-divider>
             </form>   
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button type="submit" (click)="checkAnswer()" color="primary">SUBMIT</button>
+            <button mat-raised-button type="submit" (click)="submitAnswer()" color="primary">SUBMIT</button>
           </mat-card-actions>
     </mat-card>
 </div>
