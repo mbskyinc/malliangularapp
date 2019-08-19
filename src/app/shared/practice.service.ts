@@ -27,6 +27,7 @@ export class PracticeService {
     createPractice(practice): Observable<Practice> {
       let practice_url = this.apiURL +'/sections/'+'5d318853f983bb6521372bb0' + '/practices';
       console.log(practice_url);
+      console.log(JSON.stringify(practice));
       return this.http.post<Practice>(practice_url, JSON.stringify(practice), this.httpOptions)
       .pipe(
         retry(1),
