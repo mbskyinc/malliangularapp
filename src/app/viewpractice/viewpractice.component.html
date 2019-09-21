@@ -1,0 +1,21 @@
+<p>
+  viewpractice works!
+</p>
+<div>
+<span>{{currentPractice.practiceNumber}}</span> 
+<mat-card class="my-card">
+  <mat-card-content>
+      <form class="my-form">
+          <mat-form-field class="full-width">
+                  <input  matInput [readonly]  placeholder="Data " [(ngModel)]="currentPractice.data"  name="operation"  required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+             <mat-label>Answer</mat-label>
+             <form (keydown)="keyDownFunction($event)"> 
+             <input  matInput placeholder= "data" [(ngModel)]="currentPractice.section" name="fAnswer" autocomplete="off"  required>
+             </form>    
+          </mat-form-field>
+      </form>   
+  </mat-card-content>
+  </mat-card>
+</div>

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { QuestionSet } from '../shared/questionSet';
 import { PracticeService } from "../shared/practice.service";
 import { Practice } from '../shared/practice';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-multiplication',
@@ -31,7 +32,8 @@ export class MultiplicationComponent implements OnInit {
   constructor(
     private router: Router,
     public restApi: QuestionBankService,
-    public restPracticeApi: PracticeService
+    public restPracticeApi: PracticeService,
+    public dataService: DataService
   ) { }
 
   ngOnInit() {
@@ -90,11 +92,14 @@ export class MultiplicationComponent implements OnInit {
         console.log("Before this.tempTest: " + JSON.stringify(this.tempQandA));
         console.log("Before this.tempPractice: " + JSON.stringify(this.tempPractice));
       this.restPracticeApi.createPractice(this.tempPractice).subscribe((data: Practice) => {
+        this.dataService.currentPractice = data;
         console.log(data.practiceNumber);
         console.log(data.section);
         console.log(JSON.stringify(data));
 
-        alert("The Practice is done");
+        //alert("The Practice is done");
+        //this.router.navigateByUrl("/localhost:4200/addition");
+        this.router.navigate(["viewpractice"]);
       }, (err) => { console.log('Received an errror: ' + err) })
 
     }

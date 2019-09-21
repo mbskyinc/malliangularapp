@@ -7,12 +7,15 @@ import { SubtractionComponent } from './subtraction';
 import { MyMaterialModule} from './material.module';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
+import { ViewpracticeComponent } from './viewpractice/viewpractice.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponentComponent },
   { path: 'counting', component: CountingComponent },
   { path: 'addition', component: AdditionComponent },
   { path: 'multiplication', component: MultiplicationComponent },
   { path: 'subtraction', component: SubtractionComponent },
+  { path: 'viewpractice', component: ViewpracticeComponent },
   { path: 'register', component: RegistrationComponentComponent },
   { path: 'login', component: LoginComponentComponent }
 

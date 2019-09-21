@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CountingComponent } from './counting';
 import { AdditionComponent } from './addition';
 import { MultiplicationComponent } from './multiplication/multiplication.component';
+import { ViewpracticeComponent } from './viewpractice/viewpractice.component';
 import { SubtractionComponent } from './subtraction';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
@@ -26,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
     AdditionComponent,
     MultiplicationComponent,
     SubtractionComponent,
+    ViewpracticeComponent,
     RegistrationComponentComponent,
     LoginComponentComponent
   ],

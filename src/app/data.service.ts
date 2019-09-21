@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Practice } from './shared/practice';
 
 @Injectable(
   /*{
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 }
 */)
 export class DataService {
-  loggedInUser: string; 
+  loggedInUser: string;
+  currentPractice: Practice; 
   //constructor() { }
 }
